@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <br>
+    <form method="post" >
+        <div class="form-group">
+            {% csrf_token %}
+        <h2>Range of Numbers for Random Number</h2>
+          <label for="min_number">Start of Range</label>
+            <input type="integer" class="form-control" id="min_number" name="min_number" value="{{min}}">
+            <br>
+          <label for="max_number">End of Range</label>
+          <input type="integer" class="form-control" id="max_number" name="max_number" value="{{max}}" >
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-outline-success ">Generate</button>
+        </div>
+        {% if number %}
+        <div class="text-center mt-4">
+            <h3>Your Random Number: {{ number }}</h3>
+        </div>
+        {% endif %}
+      </form>
+</div>
+{% endblock %}
