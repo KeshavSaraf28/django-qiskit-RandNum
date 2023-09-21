@@ -35,7 +35,6 @@ def home(request):
         min=request.POST["min_number"]
         max=request.POST["max_number"]
         number=RandNumGenerator(int(min),int(max))
-        print("Number is ",number)
         return render(request, "home.html", {"number":number,'min':min,'max':max})
     else:
         return render(request, "home.html", {})
